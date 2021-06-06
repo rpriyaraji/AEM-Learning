@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2021-06-06T23:07:53.983+05:30"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2021-06-06T23:07:54.826+05:30"
+        cq:lastReplicatedBy="workflow-process-service"
+        cq:lastReplicationAction="Activate"
+        cq:template="/conf/trainingproject/settings/wcm/templates/blank-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Bulk Publish!"
+        sling:resourceType="trainingproject/components/structure/page">
+        <root
+            cq:lastReplicated="{Date}2021-06-06T20:15:15.437+05:30"
+            cq:lastReplicatedBy="workflow-process-service"
+            cq:lastReplicationAction="Activate"
+            jcr:mixinTypes="[cq:ReplicationStatus]"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <bulkpublish
+                cq:lastReplicated="{Date}2021-06-06T23:07:54.587+05:30"
+                cq:lastReplicatedBy="workflow-process-service"
+                cq:lastReplicationAction="Activate"
+                jcr:created="{Date}2021-06-06T20:15:14.120+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-06-06T23:07:53.974+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:mixinTypes="[cq:ReplicationStatus]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="trainingproject/components/content/bulkPublish"
+                text="/content/trainingproject/en&#xd;&#xa;/content/trainingproject/fr"/>
+        </root>
+    </jcr:content>
+</jcr:root>

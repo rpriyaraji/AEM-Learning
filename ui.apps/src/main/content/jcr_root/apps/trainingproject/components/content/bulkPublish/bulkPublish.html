@@ -1,0 +1,57 @@
+<section>
+	<style>
+    .hidden-div {
+        display:block
+    }
+    </style>
+	<script>
+	var textData =   '${properties.text @context ="scriptString"}';
+
+	function the_function(){
+	var dataform = {};
+	dataform.data = textData;
+
+		$.ajax({
+		url: '/bin/bulkPublish',
+		type: 'POST',
+		contentType: "application/json",
+		data:  JSON.stringify(dataform) ,
+		success: function(msg){
+		var div = document.getElementById('success');
+		div.innerHTML = msg;
+		},
+		error : function() {         
+		var div = document.getElementById('error');
+		div.innerHTML = "Publish Failed";
+			} 
+		});
+
+	}
+	</script>
+	<div><h1>Bulk Publish</h1></div>
+	<div data-sly-test="${properties.text}">The following is a list of the page paths that will be published.<div></div><p id = "pagePath"></p>
+	<script>
+	var text =   '${properties.text @context ="scriptString"}';
+	text = text.split("\n");
+	var stringArray = new Array();
+	for(var i =0; i < text.length; i++){
+		stringArray.push(text[i]);
+	}
+	
+	content = "<ol>";
+	stringArray.forEach(myFunction);
+	content += "</ol>";
+	document.getElementById("pagePath").innerHTML = content;
+
+	function myFunction(value) {
+	  content += "<li>" + value + "</li>";
+	} 
+
+	</script>
+	<div class="hidden-div" id="hidden-div">
+	<button type="button" id = "submit" onclick="the_function();getElementById('hidden-div').style.display = 'none'">Click Here to Publish</button>
+    </div>
+	<h3 id ="success"></h3>
+	<h3 id = "error"></h3></div>
+	<div data-sly-test="${!properties.text}"><h4>Page Paths Are Missing! Please give proper page paths in order for them to be published.</h4></div>
+</section>
